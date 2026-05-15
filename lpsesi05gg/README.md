@@ -1,2 +1,0 @@
-# lpsesi05gg
-ggg
