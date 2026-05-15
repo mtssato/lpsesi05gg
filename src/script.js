@@ -18,21 +18,28 @@ function navTo(id){
     })
 }
 
-const cards = document.querySelectorAll('#s2, .card')
+const cards = document.querySelectorAll('#s2 .card');
 
 const observer = new IntersectionObserver((entries) => {
-    entries.foreach((entry) => {
-        if(entry.isIntersecting){
-            cards.forEach((card,index) => {
+    entries.forEach((entry) => {
+
+        if (entry.isIntersecting) {
+
+            cards.forEach((card, index) => {
                 setTimeout(() => {
                     card.classList.add('visible');
-                }, index * 500)
+                }, index * 500);
             });
-        }else{
+
+        } else {
+
             cards.forEach((card) => {
                 card.classList.remove('visible');
-            }
-        }                                
-        });         
-    })
-}),{ threshold: 0.2 });
+            });
+
+        }
+
+    });
+}, { threshold: 0.2 });
+
+observer.observe(document.querySelector('#s2'));

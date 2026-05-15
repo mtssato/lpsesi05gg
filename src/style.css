@@ -1,29 +1,29 @@
-:root{
+:root {
     --dark: #0B090A;
     --text: #ffffff;
-    --bg:#161A1D;
+    --bg: #161A1D;
     --red1: #c53695;
     --red2: #A4161A;
     --red3: #BA181B;
     --red4: #E5383B;
-    --font:"Bebas Neue", sans-serif;
+    --font: "Bebas Neue", sans-serif;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
 
-body{
+body {
     font-family: var(--font);
     background-color: var(--bg);
     color: var(--text);
     overflow-x: hidden;
 }
 
-nav{
+nav {
     width: 100%;
     position: fixed;
     top: 0;
@@ -34,26 +34,26 @@ nav{
     gap: 2vw;
     height: 100px;
     z-index: 999;
-    transition: all 1s ease-in-out; 
+    transition: all 1s ease-in-out;
     animation: decima 1s ease-in-out;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-nav.sc{
-   
+nav.sc {
+
     backdrop-filter: blur(10px);
     box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.5);
 
 }
 
 @keyframes decima {
-    0%{
+    0% {
         transform: translateY(-100px);
     }
 }
 
-.navItems{
-    background-color: #ffffff67;
+.navItems {
+    backdrop-filter: blur (30px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -62,15 +62,15 @@ nav.sc{
     border-radius: 999px;
 }
 
-.navItems img{
+.navItems img {
     width: 30px;
 }
 
-.navItems:hover{
+.navItems:hover {
     cursor: pointer;
 }
 
-.navItems a{
+.navItems a {
     color: black;
     text-decoration: none;
     font-size: 1vw;
@@ -81,17 +81,17 @@ nav.sc{
     font-family: "Bebas Neue", sans-serif;
 }
 
-.navItems a:hover{
-    text-shadow: 0px 3px 10px var(--text);
+.navItems a:hover {
+    text-shadow: 0px 3px 10px black;
     opacity: 1;
 }
 
-section{
+section {
     min-height: 100vh;
     height: auto;
 }
 
-#s1{
+#s1 {
     background-image: url('../assets/images/02946251.webp');
     background-position: center;
     background-repeat: no-repeat;
@@ -104,7 +104,7 @@ section{
     box-shadow: rgba(255, 0, 0, 0.35) 0px 5px 15px;
 }
 
-h1{
+h1 {
     font-size: 400px;
     word-break: break-word;
     overflow-wrap: break-word;
@@ -119,13 +119,13 @@ h1{
 }
 
 @keyframes esquerda {
-    0%{
+    0% {
         transform: translateX(-100px);
         opacity: 0;
     }
 }
 
-h2{
+h2 {
     font-size: 2.6vw;
     letter-spacing: 6px;
     width: 67%;
@@ -133,18 +133,27 @@ h2{
     text-align: center;
     color: rgb(233, 220, 106);
     text-shadow: 0px 1px 5px #000000;
-    
+
     animation: direita 2s ease-in-out;
 }
 
+h4{
+    font-size: 55px;
+}
+
+p{
+    font-family: inherit;
+    font-size: 20px
+}
+
 @keyframes direita {
-    0%{
+    0% {
         transform: translateX(300px);
         opacity: 0;
     }
 }
 
-footer{
+footer {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -157,18 +166,18 @@ footer{
     transition: all 1s ease-in-out
 }
 
-footer.ft{
-     
-  backdrop-filter: blur(10px);
-  
+footer.ft {
+
+    backdrop-filter: blur(10px);
+
 }
 
 .vid {
-    width: 100%;
-    height: 800px;
+    width: 60%;
+    height: 600px;
 }
 
-#s2{
+#s2 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -177,25 +186,55 @@ footer.ft{
     min-height: 70vh;
 }
 
-.card{
+#s3{
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.card {
     width: 300px;
     height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    /*opacity: 0; */
+    opacity: 0;
     transform: translateY(200px);
     transition: opacity 0.6s ease, transform 0.6s ease;
+    gap: 10px;
+    z-index: 100;
+
+
+}
+
+.card.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 
-@media (width <= 1000px){
-    .navWords{
+.dahora{
+    transition: all 200ms ease-in-out;
+    align-items: center;
+    
+
+}
+
+.dahora:hover{
+    transform: scale(1.2) translateY(-10px);
+    z-index: 999;
+    
+}
+
+
+@media (width <=1000px) {
+    .navWords {
         display: none;
     }
 
-    .vid{
-        whidth: 412px;
+    .vid {
+        width: 412px;
     }
 }
